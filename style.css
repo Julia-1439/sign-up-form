@@ -1,3 +1,5 @@
+/* ==== Normalization */
+
 *, 
 ::before,
 ::after {
@@ -10,11 +12,14 @@ html {
 
 body {
     margin: 0;
+    --banner-width: min(538px, 35%);
 }
 
+/* (a) Accessibility guideline per MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/line-height */
+/* (b) For a comfortable line length: https://web.dev/articles/min-max-clamp#width */
 p {
-    /* (a) Accessibility guideline per MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/line-height */
-    line-height: 1.5; 
+    line-height: 1.5; /* (a) */
+    width: clamp(45ch, 100%, 75ch); /* (b) */
 }
 
 button,
@@ -24,4 +29,30 @@ select,
 textarea {
     font-family: inherit;
     margin: 0;
+}
+
+
+
+
+/* ==== Main styling */
+
+#sign-up-page-container {
+    display: flex;
+}
+
+#banner-img-container {
+    width: var(--banner-width); /* Just a taste of responsive design for now... work on it later after form controls */
+    height: 100vh;
+    background-color: lightgreen;
+}
+
+#sign-up-form-container {
+    width: calc(100% - var(--banner-width));
+    height: 100vh;
+
+    padding: 50px;
+}
+
+.form-row {
+
 }

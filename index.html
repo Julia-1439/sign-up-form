@@ -8,13 +8,61 @@
 </head>
 <body>
     <div id="sign-up-page-container">
-        <div id="banner-image-container">
+        <!-- Left side: banner & logo -->
+        <div id="banner-img-container">
             <div id="logo-container"></div>
         </div>
+        <!-- Right side: form -->
         <div id="sign-up-form-container">
-            <form>
-                <div class="form-row"></div>
+            <form action="" method="post">
+                <h2>Register for an Account</h2>
+                <p>Whether you are just getting started on your wellness journey or seeking a community to practice with, we are here to help. Get started today: </p>
+                <div class="form-row">
+                    <label for="form-first-name">First Name*</label>
+                    <input type="text" name="firstName" id="form-first-name" required>    
+                    <label for="form-last-name">Last Name*</label>
+                    <input type="text" name="lastName" id="form-last-name" required>    
+                </div>
+                <div class="form-row">
+                    <label for="form-email">Email*</label>
+                    <input type="email" name="email" id="form-email" required>    
+                    <label for="form-phone">Phone</label>
+                    <input type="tel" name="phone" id="form-phone">               
+                </div>
+                <div class="form-row">
+                    <label for="form-dob">Date of Birth*</label>
+                    <input type="date" name="dob" id="form-dob">
+                </div>
+                <div class="form-row">
+                    <label for="form-password">Password*</label>
+                    <input type="password" name="password" id="form-password">
+                    <label for="form-password-confirm">Confirm Password*</label>
+                    <input type="password" id="form-password-confirm">
+                </div>
+                <div class="form-row">
+                    <label for="form-terms">Agree to Terms & Conditions</label>
+                    <input type="checkbox" name="agreeToTerms" id="form-terms">
+                </div>
+                <div class="form-row">
+                    <label for="form-newsletter">Receive newsletters about our upcoming events via Email</label>
+                    <input type="checkbox" name="wantNewsletter" id="form-newsletter">
+                </div>
                 <button type="submit">Register</button>
+            </form>
+
+            <form action="" method="post">
+                <h3>Bonus Questions (consider them a bonus)</h3>
+                <fieldset>
+                    <legend>Do you like bananas?</legend>
+                    <input type="radio" name="bananaPreference" value="yes" id="form-banana-yes">
+                    <label for="form-banana-yes">I go <em>bananas</em> over them</label>
+                    <input type="radio" name="bananaPreference" value="no" id="form-banana-no">
+                    <label for="form-banana-no">I despise them</label>
+                </fieldset>
+                <div class="form-row">
+                    <label for="form-banana-qty">How many?</label>
+                    <input type="number" name="bananaQty" id="form-banana-qty">
+                </div>
             </form>
         </div>
     </div>
