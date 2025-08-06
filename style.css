@@ -13,7 +13,16 @@ body {
 }
 
 p {
-    /* Accessibility guideline per MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/line-height */
+    /* (a) Accessibility guideline per MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/line-height */
     line-height: 1.5; 
 }
 
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: inherit;
+    margin: 0;
+    line-height: 1.5; /* (a) */
+}
