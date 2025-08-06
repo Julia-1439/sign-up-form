@@ -19,13 +19,16 @@
                 <p>Whether you are just getting started on your wellness journey or seeking a community to practice with, we are here to help. Get started today: </p>
                 <div class="form-row">
                     <label for="form-first-name">First Name*</label>
-                    <input type="text" name="firstName" id="form-first-name" required>    
+                    <input type="text" name="firstName" id="form-first-name" 
+                           required maxlength="40">    
                     <label for="form-last-name">Last Name*</label>
-                    <input type="text" name="lastName" id="form-last-name" required>    
+                    <input type="text" name="lastName" id="form-last-name" 
+                           required maxlength="40">    
                 </div>
                 <div class="form-row">
                     <label for="form-email">Email*</label>
-                    <input type="email" name="email" id="form-email" required>    
+                    <input type="email" name="email" id="form-email" 
+                           required>    
                     <label for="form-phone">Phone</label>
                     <input type="tel" name="phone" id="form-phone">               
                 </div>
@@ -35,19 +38,24 @@
                 </div>
                 <div class="form-row">
                     <label for="form-password">Password*</label>
-                    <input type="password" name="password" id="form-password">
+                    <input type="password" name="password" id="form-password"
+                           required minlength="8" maxlength="24">
+                    <!-- Checking if password matches requires JS - out of scope of this project -->
                     <label for="form-password-confirm">Confirm Password*</label>
-                    <input type="password" id="form-password-confirm">
+                    <input type="password" id="form-password-confirm"
+                           required minlength="8" maxlength="24"> 
                 </div>
                 <div class="form-row">
                     <label for="form-terms">Agree to Terms & Conditions*</label>
-                    <input type="checkbox" name="agreeToTerms" id="form-terms" required>
+                    <input type="checkbox" name="agreeToTerms" id="form-terms" 
+                           required>
                 </div>
                 <div class="form-row">
                     <label for="form-newsletter">Receive newsletters about our upcoming events via Email</label>
                     <input type="checkbox" name="wantNewsletter" id="form-newsletter">
                 </div>
                 <button type="submit">Register</button>
+                <!-- <p>Scroll down for bonus questions!</p> -->
             </form>
 
             <form action="" method="post">
@@ -61,7 +69,8 @@
                 </fieldset>
                 <div class="form-row">
                     <label for="form-banana-qty">How many?</label>
-                    <input type="number" name="bananaQty" id="form-banana-qty">
+                    <input type="number" name="bananaQty" id="form-banana-qty"
+                           min="1000"> <!-- test with an under under 1000 -->
                 </div>
             </form>
         </div>
