@@ -50,7 +50,7 @@ textarea {
     background-position-x: left;
 }
 
-#banner-img-container #logo-container {
+#logo-container {
     background-color: rgb(0,0,0, 0.5);
     color: white;
     position: absolute;
