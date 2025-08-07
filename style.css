@@ -129,9 +129,3 @@ label:has(+ input:required:user-invalid) > span[aria-label="required"] {
     color: red;
     font-weight: bold;
 }
-
-label:has(+ input[type="email"]:user-invalid) > span[aria-label="required"]::after {
-    content: "Format: joe@example.com";
-    font-size: 0.80rem;
-    font-weight: initial;
-}
