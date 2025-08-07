@@ -130,3 +130,19 @@ label:has(+ input:required:user-invalid) > span[aria-label="required"] {
     color: red;
     font-weight: bold;
 }
+
+button[type="submit"] {
+    cursor: pointer;
+    background-color: #485945;
+    color: white;
+    box-shadow: gray 0 0 22px -6px;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: large;
+    font-weight: bold;
+}
+
+button[type="submit"]:hover {
+    background-color: #374833;
+}
