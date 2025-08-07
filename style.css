@@ -76,5 +76,20 @@ textarea {
 }
 
 .form-row {
+    display: flex;
+    gap: 100px;
+    /* Add padding and change depending on first or last row maybe */
+}
+.form-cell {
 
+}
+
+.form-row > .form-cell > label {
+    display: block;
+}
+
+.form-row > .form-cell > label[for$="-terms"],
+.form-row > .form-cell > label[for$="-newsletter"] {
+    display: inline-block;
+    margin-right: 25px;
 }

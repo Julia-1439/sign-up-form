@@ -21,57 +21,85 @@
                 </div>
                 <div class="form-card">
                     <div class="form-row">
-                        <label for="form-first-name">First Name*</label>
-                        <input type="text" name="firstName" id="form-first-name"
-                               required maxlength="40">
-                        <label for="form-last-name">Last Name*</label>
-                        <input type="text" name="lastName" id="form-last-name"
-                               required maxlength="40">
+                        <div class="form-cell">
+                            <label for="form-first-name">First Name*</label>
+                            <input type="text" name="firstName" id="form-first-name"
+                                   required maxlength="40">
+                        </div>
+                        <div class="form-cell">
+                            <label for="form-last-name">Last Name*</label>
+                            <input type="text" name="lastName" id="form-last-name"
+                                   required maxlength="40">
+                        </div>
                     </div>
                     <div class="form-row">
-                        <label for="form-email">Email*</label>
-                        <input type="email" name="email" id="form-email"
-                               required>
-                        <label for="form-phone">Phone</label>
-                        <input type="tel" name="phone" id="form-phone">
+                        <div class="form-cell">
+                            <label for="form-email">Email*</label>
+                            <input type="email" name="email" id="form-email"
+                                   required>
+                        </div>
+                        <div class="form-cell">
+                            <label for="form-phone">Phone</label>
+                            <input type="tel" name="phone" id="form-phone">
+                        </div>
                     </div>
                     <div class="form-row">
-                        <label for="form-dob">Date of Birth*</label>
-                        <input type="date" name="dob" id="form-dob"
-                               required>
+                        <div class="form-cell">
+                            <label for="form-dob">Date of Birth*</label>
+                            <input type="date" name="dob" id="form-dob"
+                                   required>
+                        </div>
                     </div>
                     <div class="form-row">
-                        <label for="form-password">Password*</label>
-                        <input type="password" name="password" id="form-password"
-                               required minlength="8" maxlength="24">
+                        <div class="form-cell">
+                            <label for="form-password">Password*</label>
+                            <input type="password" name="password" id="form-password"
+                                   required minlength="8" maxlength="24">
+                        </div>
                         <!-- Checking if password matches requires JS - out of scope of this project -->
-                        <label for="form-password-confirm">Confirm Password*</label>
-                        <input type="password" id="form-password-confirm"
-                               required minlength="8" maxlength="24">
+                        <div class="form-cell">
+                            <label for="form-password-confirm">Confirm Password*</label>
+                            <input type="password" id="form-password-confirm"
+                                   required minlength="8" maxlength="24">
+                        </div>
                     </div>
                     <div class="form-row">
-                        <label for="form-terms">Agree to Terms & Conditions*</label>
-                        <input type="checkbox" name="agreeToTerms" id="form-terms"
-                               required>
+                        <div class="form-cell">
+                            <label for="form-terms">Agree to Terms & Conditions*</label>
+                            <input type="checkbox" name="agreeToTerms" id="form-terms"
+                                   required>
+                        </div>
                     </div>
                     <div class="form-row">
-                        <label for="form-newsletter">Receive newsletters about our upcoming events via Email</label>
-                        <input type="checkbox" name="wantNewsletter" id="form-newsletter">
+                        <div class="form-cell">
+                            <label for="form-newsletter">Receive newsletters about our upcoming events via Email</label>
+                            <input type="checkbox" name="wantNewsletter" id="form-newsletter">
+                        </div>
                     </div>
                     <h3>Bonus Questions (consider them a bonus)</h3>
-                    <fieldset>
-                        <legend>Do you like bananas?</legend>
-                        <input type="radio" name="bananaPreference" value="yes" id="form-banana-yes">
-                        <label for="form-banana-yes">I go <em>bananas</em> over them</label>
-                        <input type="radio" name="bananaPreference" value="no" id="form-banana-no">
-                        <label for="form-banana-no">No</label>
-                    </fieldset>
                     <div class="form-row">
-                        <label for="form-banana-qty">How many?</label>
-                        <input type="number" name="bananaQty" id="form-banana-qty"
-                        min="1000"> 
+                        <fieldset>
+                            <legend>Do you like bananas?</legend>
+                            <div>
+                                <input type="radio" name="bananaPreference" value="yes" id="form-banana-yes">
+                                <label for="form-banana-yes">I go <em>bananas</em> over them</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="bananaPreference" value="no" id="form-banana-no">
+                                <label for="form-banana-no">No</label>
+                            </div>
+                        </fieldset>
                     </div>
-                    <button type="submit">Register</button>
+                    <div class="form-row">
+                        <div class="form-cell">
+                            <label for="form-banana-qty">How many?</label>
+                            <input type="number" name="bananaQty" id="form-banana-qty"
+                            min="1000">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <button type="submit">Register</button>
+                    </div>
                 </div>
             </form>
         </div>
