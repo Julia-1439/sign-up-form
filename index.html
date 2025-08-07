@@ -20,46 +20,48 @@
                     <p>Whether you are just getting started on your wellness journey or seeking a community to practice with, we are here to help. Get started today: </p>
                 </div>
                 <div class="form-card">
-                    <!-- <p>Fields marked with * are required. </p> -->
+                    <p>Fields marked with <span aria-label="required">*</span> are required. </p>
                     <div class="form-row">
                         <div class="form-cell">
-                            <label for="form-first-name">First Name*</label>
+                            <label for="form-first-name">First Name <span aria-label="required">*</span></label>
                             <input type="text" name="firstName" id="form-first-name"
                                    required maxlength="40">
                         </div>
                         <div class="form-cell">
-                            <label for="form-last-name">Last Name*</label>
+                            <label for="form-last-name">Last Name <span aria-label="required">*</span></label>
                             <input type="text" name="lastName" id="form-last-name"
                                    required maxlength="40">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-cell">
-                            <label for="form-email">Email*</label>
+                            <label for="form-email">Email <span aria-label="required">*</span></label>
                             <input type="email" name="email" id="form-email"
-                                   required>
+                                   required
+                                   placeholder="johnsmith@example.com">
                         </div>
                         <div class="form-cell">
                             <label for="form-phone">Phone</label>
-                            <input type="tel" name="phone" id="form-phone">
+                            <input type="tel" name="phone" id="form-phone"
+                                   placeholder="(123) 456-7890">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-cell">
-                            <label for="form-dob">Date of Birth*</label>
+                            <label for="form-dob">Date of Birth <span aria-label="required">*</span></label>
                             <input type="date" name="dob" id="form-dob"
                                    required>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-cell">
-                            <label for="form-password">Password*</label>
+                            <label for="form-password">Password <span aria-label="required">*</span></label>
                             <input type="password" name="password" id="form-password"
                                    required minlength="8" maxlength="24">
                         </div>
                         <!-- Checking if password matches requires JS - out of scope of this project -->
                         <div class="form-cell">
-                            <label for="form-password-confirm">Confirm Password*</label>
+                            <label for="form-password-confirm">Confirm Password <span aria-label="required">*</span></label>
                             <input type="password" id="form-password-confirm"
                                    required minlength="8" maxlength="24">
                         </div>
@@ -67,7 +69,7 @@
                     <!-- right-align the checkbox rows. also consider putting them into one .form-row -->
                     <div class="form-row">
                         <div class="form-cell">
-                            <label for="form-terms">Agree to Terms & Conditions*</label>
+                            <label for="form-terms">Agree to Terms & Conditions <span aria-label="required">*</span></label>
                             <input type="checkbox" name="agreeToTerms" id="form-terms"
                                    required>
                         </div>

@@ -31,6 +31,8 @@ textarea {
     margin: 0;
 }
 
+/* Might want to do `appearance: none` for radio & chkboxes */
+
 
 
 
@@ -104,9 +106,27 @@ textarea {
     margin: 0 25px 0 0;
 }
 
-input:not(input[type="checkbox"]),
-input:not(input[type="radio"]) {
+input:not([type="checkbox"]),
+input:not([type="radio"]) {
     height: 32px;
     padding: 2px 4px;
     font-size: 1rem;
+    border: 1px solid #DBDBDB;
+}
+
+input[type="password"] {
+    letter-spacing: 0.1rem;
+}
+
+input:user-invalid {
+    border-color: red;
+}
+label:has(+ input:user-invalid) > span[aria-label="required"] {
+    color: red;
+    font-weight: bold;
+}
+label:has(+ input:user-invalid) > span[aria-label="required"]::after {
+    content: " Required";
+    font-size: 0.80rem;
+    font-weight: initial;
 }
