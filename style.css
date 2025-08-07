@@ -129,8 +129,3 @@ label:has(+ input:user-invalid) > span[aria-label="required"] {
     color: red;
     font-weight: bold;
 }
-label:has(+ input:user-invalid) > span[aria-label="required"]::after {
-    content: " Required";
-    font-size: 0.80rem;
-    font-weight: initial;
-}
