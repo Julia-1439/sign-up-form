@@ -1,4 +1,4 @@
-/* ==== Normalization */
+/* ======== Normalization */
 
 *, 
 ::before,
@@ -34,12 +34,13 @@ textarea {
 
 
 
-/* ==== Main styling */
+/* ======== Main styling */
 
 #sign-up-page-container {
     display: flex;
 }
 
+/* ==== Left side - banner image & logo */
 #banner-img-container {
     position: relative;
     width: var(--banner-width); /* Just a taste of responsive design for now... work on it later after form controls */
@@ -59,18 +60,20 @@ textarea {
     width: 100%;
 }
 
+/* ==== Form */
 #right-side-container {
     width: calc(100% - var(--banner-width));
     height: 100vh;
     background-color: #F9FAFB;
+    --x-padding-card: 50px;
 }
 
 .info-card {
-    padding: 50px;
+    padding: 25px var(--x-padding-card);
 }
 
 .form-card {
-    padding: 50px;
+    padding: var(--x-padding-card);
     background-color: white;
     box-shadow: gray 0 0 22px -6px;
 }
@@ -79,17 +82,31 @@ textarea {
     display: flex;
     gap: 100px;
     /* Add padding and change depending on first or last row maybe */
+    margin-bottom: 25px;
 }
+
+.form-card > .form-row:last-child {
+    margin-bottom: 0;
+}
+
 .form-cell {
 
 }
 
 .form-row > .form-cell > label {
     display: block;
+    margin: 0 0 12px;
 }
 
 .form-row > .form-cell > label[for$="-terms"],
 .form-row > .form-cell > label[for$="-newsletter"] {
     display: inline-block;
-    margin-right: 25px;
+    margin: 0 25px 0 0;
+}
+
+input:not(input[type="checkbox"]),
+input:not(input[type="radio"]) {
+    height: 32px;
+    padding: 2px 4px;
+    font-size: 1rem;
 }
