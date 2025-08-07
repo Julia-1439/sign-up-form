@@ -37,7 +37,8 @@
                     </div>
                     <div class="form-row">
                         <label for="form-dob">Date of Birth*</label>
-                        <input type="date" name="dob" id="form-dob">
+                        <input type="date" name="dob" id="form-dob"
+                               required>
                     </div>
                     <div class="form-row">
                         <label for="form-password">Password*</label>
@@ -57,30 +58,22 @@
                         <label for="form-newsletter">Receive newsletters about our upcoming events via Email</label>
                         <input type="checkbox" name="wantNewsletter" id="form-newsletter">
                     </div>
-                </div>
-                <button type="submit">Register</button>
-                <!-- <p>Scroll down for bonus questions!</p> -->
-            </form>
-
-            <div class="info-card">
-                <h3>Bonus Questions (consider them a bonus)</h3>
-            </div>
-            <div class="form-card">
-                <form action="" method="post">
+                    <h3>Bonus Questions (consider them a bonus)</h3>
                     <fieldset>
                         <legend>Do you like bananas?</legend>
                         <input type="radio" name="bananaPreference" value="yes" id="form-banana-yes">
                         <label for="form-banana-yes">I go <em>bananas</em> over them</label>
                         <input type="radio" name="bananaPreference" value="no" id="form-banana-no">
-                        <label for="form-banana-no">I despise them</label>
+                        <label for="form-banana-no">No</label>
                     </fieldset>
                     <div class="form-row">
                         <label for="form-banana-qty">How many?</label>
                         <input type="number" name="bananaQty" id="form-banana-qty"
-                               min="1000"> <!-- test with an under under 1000 -->
+                        min="1000"> 
                     </div>
-                </form>
-            </div>
+                    <button type="submit">Register</button>
+                </div>
+            </form>
         </div>
     </div>
 </body>
