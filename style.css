@@ -166,10 +166,6 @@ input:not([type="checkbox"]):not([type="radio"]) {
     border-radius: 6px;
 }
 
-input[type="password"] {
-    letter-spacing: 0.1rem;
-}
-
 input:user-invalid {
     border-color: red; /* what happened to the red borders? */
 }
