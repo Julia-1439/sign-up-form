@@ -151,7 +151,8 @@ textarea {
 }
 
 input[type="password"] {
-    letter-spacing: 0.1rem;
+    /* Increase space btwn the dots for more comfortable look */
+    letter-spacing: 0.1rem; 
 }
 
 input[type="checkbox"], input[type="radio"] {
@@ -170,7 +171,8 @@ input:not([type="checkbox"]):not([type="radio"]) {
 input:not([type="checkbox"]):not([type="radio"]):user-invalid {
     border-color: red; 
 }
-label:has(+ input:required:user-invalid) > span[aria-label="required"] {
+label:has(+ input:required:user-invalid) > span[aria-label="required"],
+label:has(> input:required:user-invalid) > span[aria-label="required"] {
     color: red;
     font-weight: bold;
 }
