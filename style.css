@@ -167,8 +167,8 @@ input:not([type="checkbox"]):not([type="radio"]) {
     border-radius: 6px;
 }
 
-input:user-invalid {
-    border-color: red; /* what happened to the red borders? */
+input:not([type="checkbox"]):not([type="radio"]):user-invalid {
+    border-color: red; 
 }
 label:has(+ input:required:user-invalid) > span[aria-label="required"] {
     color: red;
