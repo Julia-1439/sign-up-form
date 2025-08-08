@@ -5,15 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calm: Registration</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* A display value of "swap" was chosen since we wish to display the 
+        company name ASAP but still use the imported font once it loads. */
+        @import url('https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap');
+    </style>
 </head>
 <body>
     <div id="sign-up-page-container">
         <!-- Left side: banner & logo -->
-        <div id="banner-img-container">
-            <div id="logo-container"></div>
+        <div id="left-side-container">
+            <div id="logo-container">
+                <img src="./assets/logo-img.svg" alt="Company logo">
+                <h1 id="logo-text">Calm</h1>
+            </div>
+            <footer>
+                <p>
+                    Photo by <a target="_blank" href="https://pixabay.com/users/bertvthul-1134851/">Bertvthul</a> on <a target="_blank" href="https://pixabay.com/photos/avenue-trees-path-sunbeams-sunrays-815297/">Pixabay</a>
+                    <br>
+                    Logo supplied by <a target="_blank" href="https://www.svgviewer.dev/s/446953/sunflower">SVG Viewer</a>
+                </p>
+            </footer>
         </div>
         <!-- Right side: form -->
         <div id="right-side-container">
+            <!-- Consider if <main> would be a good choice, esp due to the multi-column layout -->
             <form action="" method="post">
                 <div class="info-card">
                     <h2>Register for an Account</h2>
