@@ -177,6 +177,10 @@ label:has(> input:required:user-invalid) > span[aria-label="required"] {
     font-weight: bold;
 }
 
+label:has(> input[type="checkbox"]) {
+    cursor: pointer;
+}
+
 #form-register {
     cursor: pointer;
     background-color: var(--form-lightgreen);
