@@ -116,12 +116,13 @@ textarea {
 .form-row {
     display: flex;
     gap: 100px;
-    /* Add padding and change depending on first or last row maybe */
-    margin-bottom: 25px;
+    --form-row-margin-bottom: 25px;
+    margin-bottom: var(--form-row-margin-bottom);
 }
 
-.form-card > .form-row:last-child {
+.form-card > .form-row:has(#form-register) {
     margin-bottom: 0;
+    margin-top: calc(1.5 * var(--form-row-margin-bottom));
 }
 
 .form-cell {
@@ -174,9 +175,9 @@ label:has(+ input:required:user-invalid) > span[aria-label="required"] {
     font-weight: bold;
 }
 
-button[type="submit"] {
+#form-register {
     cursor: pointer;
-    background-color: #485945;
+    background-color: var(--form-lightgreen);
     color: white;
     box-shadow: gray 0 0 22px -6px;
     border: none;
@@ -186,6 +187,16 @@ button[type="submit"] {
     font-weight: bold;
 }
 
-button[type="submit"]:hover {
-    background-color: #374833;
+#form-register:hover {
+    background-color: var(--form-darkgreen);
+}
+
+#form-login-link {
+    color: var(--form-lightgreen);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#form-login-link:hover {
+    color: var(--form-darkgreen);
 }
