@@ -97,6 +97,10 @@ textarea {
     --x-padding-card: 50px;
 }
 
+#right-side-container h1 {
+    font-size: 24px; /* Font size of a h2. h1 tag is used for semantics. */ 
+}
+
 .info-card {
     padding: 25px var(--x-padding-card);
 }
