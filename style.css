@@ -51,6 +51,8 @@ textarea {
     background-size: cover;
     background-position-x: left;
     color: white;
+
+    overflow: hidden;
 }
 
 #left-side-container > footer {
@@ -86,7 +88,6 @@ textarea {
     text-shadow: #FFAC33 1px 0 10px; /* dominant color of the sunflower logo */
     font-size: 5rem;
     font-weight: normal;
-    overflow: hidden;
 }
 
 /* ==== For the form side */
