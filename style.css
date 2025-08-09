@@ -13,6 +13,7 @@ html {
     --x-padding-form-card: 50px;
     --form-lightgreen: #485945;
     --form-darkgreen: #374833;
+    --box-shadow-color: gray;
 }
 
 body {
@@ -34,11 +35,6 @@ textarea {
     font-family: inherit;
     margin: 0;
 }
-
-/* Might want to do `appearance: none` for radio & chkboxes */
-
-
-
 
 /* ======== Main styling */
 
@@ -93,7 +89,7 @@ textarea {
     overflow: hidden;
 }
 
-/* ==== Form */
+/* ==== For the form side */
 #right-side-container {
     width: calc(100% - var(--banner-width));
     background-color: #F9FAFB;
@@ -110,7 +106,7 @@ textarea {
 .form-card {
     padding: var(--x-padding-form-card);
     background-color: white;
-    box-shadow: gray 0 0 22px -6px;
+    box-shadow: var(--box-shadow-color) 0 0 22px -6px;
 }
 
 .form-row {
@@ -123,10 +119,6 @@ textarea {
 .form-card > .form-row:has(#form-register) {
     margin-bottom: 0;
     margin-top: calc(1.5 * var(--form-row-margin-bottom));
-}
-
-.form-cell {
-
 }
 
 .form-cell > ul {
@@ -150,16 +142,8 @@ textarea {
     margin: 0 25px 0 0;
 }
 
-input[type="password"] {
-    /* Increase space btwn the dots for more comfortable look */
-    letter-spacing: 0.1rem; 
-}
 
-input[type="checkbox"], input[type="radio"] {
-    cursor: pointer; 
-}
-
-input:not([type="checkbox"]):not([type="radio"]) {
+input:not([type="checkbox"]) {
     width: 100%;
     height: 32px;
     padding: 2px 8px;
@@ -168,7 +152,24 @@ input:not([type="checkbox"]):not([type="radio"]) {
     border-radius: 6px;
 }
 
-input:not([type="checkbox"]):not([type="radio"]):user-invalid {
+input[type="password"] {
+    /* Increase space between the dots for more comfortable look */
+    letter-spacing: 0.1rem; 
+}
+
+input[type="checkbox"] {
+    cursor: pointer; 
+}
+
+/* Enhance UX when interacting with the form inputs & labels */
+
+input:not([type="checkbox"]):focus {
+    outline-color: blue; 
+    outline-offset: 6px;
+    box-shadow: 1px 1px 3px var(--box-shadow-color); 
+}
+
+input:not([type="checkbox"]):user-invalid {
     border-color: red; 
 }
 label:has(+ input:required:user-invalid) > span[aria-label="required"],
@@ -177,15 +178,27 @@ label:has(> input:required:user-invalid) > span[aria-label="required"] {
     font-weight: bold;
 }
 
-label:has(> input[type="checkbox"]) {
+label[for="form-terms"], 
+label[for="form-newsletter"] {
     cursor: pointer;
 }
+
+label[for="form-terms"] a {
+    color: initial;
+}
+
+label[for="form-newsletter"]::after {
+    content: "✉️";
+}
+
+
+/* Submit button and login */
 
 #form-register {
     cursor: pointer;
     background-color: var(--form-lightgreen);
     color: white;
-    box-shadow: gray 0 0 22px -6px;
+    box-shadow: var(--box-shadow-color) 0 0 22px -6px;
     border: none;
     border-radius: 8px;
     padding: 12px 24px;
