@@ -122,6 +122,10 @@ textarea {
     margin-top: calc(1.5 * var(--form-row-margin-bottom));
 }
 
+.form-cell {
+    min-width: 12ch; 
+}
+
 .form-cell > ul {
     list-style-type: none;
     margin: 0;
