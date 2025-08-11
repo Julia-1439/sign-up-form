@@ -170,10 +170,12 @@ input[type="checkbox"] {
 
 /* Enhance UX when interacting with the form inputs & labels */
 
+/* (note) Necessary for Firefox to apply the custom outline-color */
 input:not([type="checkbox"]):focus {
     outline-color: #3D67DD; 
     outline-offset: 6px;
     box-shadow: 1px 1px 3px var(--box-shadow-color); 
+    outline-style: solid; /* (note) */
 }
 
 input:not([type="checkbox"]):user-invalid {
