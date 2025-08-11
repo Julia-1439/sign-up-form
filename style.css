@@ -1,4 +1,5 @@
-/* ======== Normalization */
+/* Normalization styles ===================================================== */
+/* Some taken from moden-normalize https://github.com/sindresorhus/modern-normalize/ */
 
 *, 
 ::before,
@@ -9,8 +10,8 @@
 html {
     font-family: var(--font-stack);
     --font-stack: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    --banner-width: min(538px, 35%); /* Avoid it overtaking the screen with a cap of 35% */
-    --x-padding-form-card: 50px;
+    --picture-width: min(538px, 35%); /* Avoid it overtaking the screen with a cap of 35% */
+    --x-padding-card: 50px;
     --form-lightgreen: #485945;
     --form-darkgreen: #374833;
     --box-shadow-color: gray;
@@ -21,11 +22,11 @@ body {
     margin: 0;
 }
 
-/* (a) Accessibility guideline per MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/line-height */
-/* (b) For a comfortable line length: https://web.dev/articles/min-max-clamp#width */
 p {
-    line-height: 1.5; /* (a) */
-    width: clamp(45ch, 100%, 75ch); /* (b) */
+    line-height: 1.5; /* note (a) */
+    width: clamp(45ch, 100%, 75ch); /* note (b) */
+    /* (a) Accessibility guideline per MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/line-height */
+    /* (b) For a comfortable line length: https://web.dev/articles/min-max-clamp#width */
 }
 
 button,
@@ -37,32 +38,31 @@ textarea {
     margin: 0;
 }
 
-/* ======== Main styling */
+/* Main styling starts here ================================================= */
 
-#sign-up-page-container {
+body {
     display: flex;
 }
 
-/* ==== Left side - banner image & logo */
+/* Left side ================================================================ */
+
 #left-side-container {
     position: relative;
-    width: var(--banner-width);
-
+    width: var(--picture-width);
     background-image: url(./assets/banner-full.jpg);
     background-size: cover;
     background-position-x: left;
     color: white;
-
-    overflow: hidden;
+    overflow: hidden; /* Hide overflow on large zooms */
 }
 
 #left-side-container > footer {
-    /* (note) <footer> is typically a block element but abs positioning removes 
-    it from document flow, so its width needs to be manually set. */
     position: absolute; 
     bottom: 20px;
     width: 100%; /* (note) */
     text-align: center;
+    /* (note) <footer> is typically a block element but abs positioning removes 
+    it from document flow, so its width needs to be manually set. */
 }
 
 #left-side-container a:any-link {
@@ -72,28 +72,29 @@ textarea {
 #logo-container {
     position: relative;
     top: 100px;
-    display: flex;
     background-color: rgb(0,0,0, 0.5);
     height: 20%;
+    display: flex;
     align-items: center;
     justify-content: center;
     gap: 25px;
 }
 
-#logo-container > img {
-    max-height: 40%;
+#logo-img {
+    height: 40%;
 }
 
-#logo-container > #logo-text {
+#logo-text {
     font-family: "Imperial Script", cursive, var(--font-stack);
     text-shadow: #FFAC33 1px 0 10px; /* dominant color of the sunflower logo */
     font-size: 5rem;
     font-weight: normal;
 }
 
-/* ==== For the form side */
+/* Right side =============================================================== */
+
 #right-side-container {
-    width: calc(100% - var(--banner-width));
+    width: calc(100% - var(--picture-width));
     background-color: #F9FAFB;
 }
 
@@ -102,11 +103,11 @@ textarea {
 }
 
 .info-card {
-    padding: 25px var(--x-padding-form-card);
+    padding: 25px var(--x-padding-card);
 }
 
 .form-card {
-    padding: var(--x-padding-form-card);
+    padding: var(--x-padding-card) var(--x-padding-card); 
     background-color: white;
     box-shadow: var(--box-shadow-color) 0 0 22px -6px;
 }
@@ -114,41 +115,56 @@ textarea {
 .form-row {
     display: flex;
     gap: 100px;
+    margin-bottom: var(--form-row-margin-bottom);   
     --form-row-margin-bottom: 25px;
-    margin-bottom: var(--form-row-margin-bottom);
 }
 
-.form-row:has(#form-register) {
-    margin-bottom: 0;
-    margin-top: calc(1.5 * var(--form-row-margin-bottom));
+.form-row:nth-last-child(2) {
+    margin-bottom: calc(2 * var(--form-row-margin-bottom));
 }
 
 .form-cell {
-    min-width: 12ch; 
-    width: 260px;
+    width: 260px; 
+    min-width: 12ch; /* Allow forms a min size on large zooms */
+
+    /* Note: This implemention is different from `width: max(260px, 12ch)`.
+    After all, max(260px, 12ch) in the end is just a number able to be overrided
+    by flex computations, bypassing the 12ch "minimum", where as `min-width` is 
+    a hard set minimum. */
 }
 
-.form-row > ul {
+ul.form-list {
     list-style-type: none;
     margin: 0;
     padding-left: 0;
 }
 
-.form-row li + li {
-    margin-top: 10px; /* Add additional space between list items */
+ul.form-list > li + li { /* Ignores first <li> */
+    margin-top: 10px; 
 }
 
-.form-row > .form-cell > label {
+/* Lay out the form inputs and labels (no interactivity yet) ================ */
+/* ========================================================================== */
+
+label {
     display: block;
     margin: 0 0 12px;
 }
 
-.form-row > .form-cell > label[for$="-terms"],
-.form-row > .form-cell > label[for$="-newsletter"] {
+label[for$="-terms"], /* Used the $ sign for practice :3 */
+label[for$="-newsletter"] {
     display: inline-block;
-    margin: 0 25px 0 0;
+    margin: 0; /* Both checkboxes should be close together */
+    cursor: pointer;
 }
 
+label[for="form-terms"] > a {
+    color: initial;
+}
+
+label[for="form-newsletter"]::after {
+    content: "✉️";
+}
 
 input:not([type="checkbox"]) {
     width: 100%;
@@ -160,29 +176,48 @@ input:not([type="checkbox"]) {
 }
 
 input[type="password"] {
-    /* Increase space between the dots for more comfortable look */
-    letter-spacing: 0.1rem; 
+    letter-spacing: 0.1rem; /* Increase space between the dots for visibility */
 }
 
 input[type="checkbox"] {
     cursor: pointer; 
 }
 
-/* Enhance UX when interacting with the form inputs & labels */
+#form-register-btn {
+    cursor: pointer;
+    background-color: var(--form-lightgreen);
+    color: white;
+    box-shadow: var(--box-shadow-color) 0 0 22px -6px;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
 
-/* (note) Necessary for Firefox to apply the custom outline-color */
+#form-login-link {
+    color: var(--form-lightgreen);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Interactivity for the form controls ====================================== */
+/* ========================================================================== */
+
 input:not([type="checkbox"]):focus {
+    outline-offset: 6px; /* Add a noticeable ring around focused fields */
     outline-color: #3D67DD; 
-    outline-offset: 6px;
     box-shadow: 1px 1px 3px var(--box-shadow-color); 
     outline-style: solid; /* (note) */
+    /* (note) Necessary for Firefox to apply the custom outline-color */
 }
 
 input:not([type="checkbox"]):user-invalid {
     border-color: red; 
 }
-label:has(+ input:required:user-invalid) > span[aria-label="required"],
-label:has(> input:required:user-invalid) > span[aria-label="required"] {
+
+label:has(+ input:user-invalid) > span[aria-label="required"],
+label:has(> input:user-invalid) > span[aria-label="required"] {
     color: red;
     font-weight: bold;
 }
@@ -190,16 +225,17 @@ label:has(> input:required:user-invalid) > span[aria-label="required"] {
 .has-help-msg {
     text-overflow: visible;
     text-wrap: nowrap;
-    display: inline-block; /* Necessary for overflow & wrap */
-    width: 1ch; /* Space to hold the asterisk */
+    display: inline-block; /* (note) */
+    width: 1ch; /* (note) */
+    /* (note) block display & width needed for overflow & nowrap to apply */
 }
 
-.has-help-msg:has(+ input:required:user-invalid) > span[aria-label="required"]::after {
+.has-help-msg:has(+ input:user-invalid) > span[aria-label="required"]::after {
     font-size: var(--help-msg-size);
     font-weight: initial;
 }
 
-label[for="form-email"]:has(+ input:required:user-invalid) > span[aria-label="required"]::after {
+label[for="form-email"]:has(+ input:user-invalid) > span[aria-label="required"]::after {
     content: " Format: joe@example.com";
 }
 
@@ -208,43 +244,8 @@ label[for="form-password-confirm"]:has(+ input:required:user-invalid) > span[ari
     content: " Must be at least 8 characters long";
 } 
 
-
-label[for="form-terms"], 
-label[for="form-newsletter"] {
-    cursor: pointer;
-}
-
-label[for="form-terms"] a {
-    color: initial;
-}
-
-label[for="form-newsletter"]::after {
-    content: "✉️";
-}
-
-
-/* Submit button and login */
-
-#form-register {
-    cursor: pointer;
-    background-color: var(--form-lightgreen);
-    color: white;
-    box-shadow: var(--box-shadow-color) 0 0 22px -6px;
-    border: none;
-    border-radius: 8px;
-    padding: 12px 24px;
-    font-size: large;
-    font-weight: bold;
-}
-
-#form-register:hover {
+#form-register-btn:hover {
     background-color: var(--form-darkgreen);
-}
-
-#form-login-link {
-    color: var(--form-lightgreen);
-    font-weight: bold;
-    text-decoration: none;
 }
 
 #form-login-link:hover {

@@ -12,106 +12,106 @@
     </style>
 </head>
 <body>
-    <div id="sign-up-page-container">
-        <!-- Left side: banner & logo -->
-        <div id="left-side-container">
-            <div id="logo-container">
-                <img src="./assets/logo-img.svg" alt="Company logo">
-                <h1 id="logo-text">Serenity</h1>
-            </div>
-            <footer>
-                <p>
-                    Photo by <a target="_blank" href="https://pixabay.com/users/bertvthul-1134851/">Bertvthul</a> on <a target="_blank" href="https://pixabay.com/photos/avenue-trees-path-sunbeams-sunrays-815297/">Pixabay</a>
-                    <br>
-                    Logo supplied by <a target="_blank" href="https://www.svgviewer.dev/s/446953/sunflower">SVG Viewer</a>
-                </p>
-            </footer>
+    <!-- Left side: background image & logo -->
+    <div id="left-side-container">
+        <div id="logo-container">
+            <img id="logo-img" src="./assets/logo-img.svg" alt="Company logo">
+            <h1 id="logo-text">Serenity</h1>
         </div>
-        <!-- Right side: form -->
-        <div id="right-side-container">
-            <main>
-                <form action="" method="post">
-                    <div class="info-card">
-                        <h1>Register for an Account</h1>
-                        <p>Whether you are just getting started on your wellness journey or seeking a community to practice with, we are here to help. Get started today: </p>
+        <footer>
+            <p>
+                Photo by <a target="_blank" href="https://pixabay.com/users/bertvthul-1134851/">Bertvthul</a> on <a target="_blank" href="https://pixabay.com/photos/avenue-trees-path-sunbeams-sunrays-815297/">Pixabay</a>
+                <br>
+                Logo supplied by <a target="_blank" href="https://www.svgviewer.dev/s/446953/sunflower">SVG Viewer</a>
+            </p>
+        </footer>
+    </div>
+    <!-- Right side: form -->
+    <div id="right-side-container">
+        <main>
+            <form action="" method="post">
+                <div class="info-card">
+                    <h1>Register for an Account</h1>
+                    <p>Whether you are just getting started on your wellness journey or seeking a community to practice with, we are here to help. Get started today: </p>
+                </div>
+                <div class="form-card">
+                    <div class="form-row">
+                        <p>Fields marked with <span aria-label="required">*</span> are required. </p>
                     </div>
-                    <div class="form-card">
-                        <div class="form-row">
-                            <p>Fields marked with <span aria-label="required">*</span> are required. </p>
+                    <div class="form-row">
+                        <div class="form-cell">
+                            <label for="form-first-name">First Name <span aria-label="required">*</span></label>
+                            <input type="text" name="firstName" id="form-first-name"
+                                   required maxlength="40">
                         </div>
-                        <div class="form-row">
-                            <div class="form-cell">
-                                <label for="form-first-name">First Name <span aria-label="required">*</span></label>
-                                <input type="text" name="firstName" id="form-first-name"
-                                       required maxlength="40">
-                            </div>
-                            <div class="form-cell">
-                                <label for="form-last-name">Last Name <span aria-label="required">*</span></label>
-                                <input type="text" name="lastName" id="form-last-name"
-                                       required maxlength="40">
-                            </div>
+                        <div class="form-cell">
+                            <label for="form-last-name">Last Name <span aria-label="required">*</span></label>
+                            <input type="text" name="lastName" id="form-last-name"
+                                   required maxlength="40">
                         </div>
-                        <div class="form-row">
-                            <div class="form-cell">
-                                <label for="form-email" class="has-help-msg">Email <span aria-label="required">*</span></label>
-                                <input type="email" name="email" id="form-email"
-                                       required
-                                       placeholder="joe@example.com">
-                            </div>
-                            <div class="form-cell">
-                                <label for="form-phone">Phone</label>
-                                <input type="tel" name="phone" id="form-phone"
-                                       placeholder="(123) 456-7890">
-                            </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-cell">
+                            <label for="form-email" class="has-help-msg">Email <span aria-label="required">*</span></label>
+                            <input type="email" name="email" id="form-email"
+                                   required
+                                   placeholder="joe@example.com">
                         </div>
-                        <div class="form-row">
-                            <div class="form-cell">
-                                <label for="form-dob">Date of Birth <span aria-label="required">*</span></label>
-                                <input type="date" name="dob" id="form-dob"
-                                       required>
-                            </div>
-                            <div class="form-cell">
+                        <div class="form-cell">
+                            <label for="form-phone">Phone</label>
+                            <input type="tel" name="phone" id="form-phone"
+                                   placeholder="(123) 456-7890">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-cell">
+                            <label for="form-dob">Date of Birth <span aria-label="required">*</span></label>
+                            <input type="date" name="dob" id="form-dob"
+                                   required>
+                        </div>
+                        <div class="form-cell">
 
-                            </div>
                         </div>
-                        <div class="form-row">
-                            <div class="form-cell">
-                                <label for="form-password" class="has-help-msg">Password <span aria-label="required">*</span></label>
-                                <input type="password" name="password" id="form-password"
-                                       required minlength="8" maxlength="24">
-                            </div>
-                            <!-- Checking if password matches requires JS - out of scope of this project -->
-                            <div class="form-cell">
-                                <label for="form-password-confirm" class="has-help-msg">Confirm Password <span aria-label="required">*</span></label>
-                                <input type="password" id="form-password-confirm"
-                                       required minlength="8" maxlength="24">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <ul>
-                                <li>
-                                    <label for="form-terms">                                            
-                                        <input type="checkbox" name="agreeToTerms" id="form-terms"
-                                               required>
-                                        <span aria-label="required">*</span> Agree to <a href="">Terms & Conditions</a>
-                                    </label>
-                                </li>
-                                <li>
-                                    <label for="form-newsletter">
-                                        <input type="checkbox" name="wantNewsletter" id="form-newsletter">
-                                        &nbsp&nbsp Receive emails for upcoming events
-                                    </label>
-                                </li>
-                            </ul>                   
-                        </div>
-                        <div class="form-row">
-                            <button id="form-register" type="submit">Register</button>
-                        </div>
-                        <p>Already have an account? <a id="form-login-link" href="">Log In</a></p>
                     </div>
-                </form>
-            </main>
-        </div>
+                    <div class="form-row">
+                        <div class="form-cell">
+                            <label for="form-password" class="has-help-msg">Password <span aria-label="required">*</span></label>
+                            <input type="password" name="password" id="form-password"
+                                   required minlength="8" maxlength="24">
+                        </div>
+                        <!-- Checking if password matches requires JS - out of scope of this project -->
+                        <div class="form-cell">
+                            <label for="form-password-confirm" class="has-help-msg">Confirm Password <span aria-label="required">*</span></label>
+                            <input type="password" id="form-password-confirm"
+                                   required minlength="8" maxlength="24">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <ul class="form-list">
+                            <li>
+                                <label for="form-terms">                                            
+                                    <input type="checkbox" name="agreeToTerms" id="form-terms"
+                                           required>
+                                    <span aria-label="required">*</span> Agree to <a href="">Terms & Conditions</a>
+                                </label>
+                            </li>
+                            <li>
+                                <label for="form-newsletter">
+                                    <input type="checkbox" name="wantNewsletter" id="form-newsletter">
+                                    &nbsp&nbsp Receive emails for upcoming events
+                                </label>
+                            </li>
+                        </ul>                   
+                    </div>
+                    <div class="form-row">
+                        <div>
+                            <button id="form-register-btn" type="submit">Register</button>
+                            <p>Already have an account? <a id="form-login-link" href="">Log In</a></p>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </main>
     </div>
 </body>
 </html>
