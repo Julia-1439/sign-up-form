@@ -14,6 +14,7 @@ html {
     --form-lightgreen: #485945;
     --form-darkgreen: #374833;
     --box-shadow-color: gray;
+    --help-msg-size: 0.80rem;
 }
 
 body {
@@ -182,6 +183,28 @@ label:has(> input:required:user-invalid) > span[aria-label="required"] {
     color: red;
     font-weight: bold;
 }
+
+.has-help-msg {
+    text-overflow: visible;
+    text-wrap: nowrap;
+    display: inline-block; /* Necessary for overflow & wrap */
+    width: 1ch; /* Space to hold the asterisk */
+}
+
+.has-help-msg:has(+ input:required:user-invalid) > span[aria-label="required"]::after {
+    font-size: var(--help-msg-size);
+    font-weight: initial;
+}
+
+label[for="form-email"]:has(+ input:required:user-invalid) > span[aria-label="required"]::after {
+    content: " Format: joe@example.com";
+}
+
+label[for="form-password"]:has(+ input:required:user-invalid) > span[aria-label="required"]::after,
+label[for="form-password-confirm"]:has(+ input:required:user-invalid) > span[aria-label="required"]::after {
+    content: " Must be at least 8 characters long";
+} 
+
 
 label[for="form-terms"], 
 label[for="form-newsletter"] {
