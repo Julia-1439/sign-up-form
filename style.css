@@ -125,6 +125,7 @@ textarea {
 
 .form-cell {
     min-width: 12ch; 
+    width: 260px;
 }
 
 .form-cell > ul {
