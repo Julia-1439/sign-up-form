@@ -128,13 +128,13 @@ textarea {
     width: 260px;
 }
 
-.form-cell > ul {
+.form-row > ul {
     list-style-type: none;
     margin: 0;
     padding-left: 0;
 }
 
-.form-cell li + li {
+.form-row li + li {
     margin-top: 10px; /* Add additional space between list items */
 }
 
