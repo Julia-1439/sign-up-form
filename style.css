@@ -106,7 +106,7 @@ body {
     padding: 25px var(--x-padding-card);
 }
 
-.form-card {
+#registration-form {
     padding: var(--x-padding-card) var(--x-padding-card); 
     background-color: white;
     box-shadow: var(--box-shadow-color) 0 0 22px -6px;
