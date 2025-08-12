@@ -4,7 +4,7 @@ A basic sign-up form for a fictional service, created using my knowledge of HTML
 
 <strong>Features:</strong> This webpage features a left side with image banner and logo, and a right side with a registration form. There is some responsiveness implemented for different window sizes and zoom levels. Accessibility features were implemented when filling out the form, including custom focus indicators and error messages. Webpage was tested on Chrome & Firefox. 
 
-<strong>Caveats:</strong> The following were out of scope for this project: No responsiveness for mobile/other devices. No Javascript validation for the form. Did not test on all major browsers. Limited custom styling for checkboxes (due to basically needing to build Rome from scratch for them). Other form controls were omitted: radio, select. 
+<strong>Caveats:</strong> The following were out of scope for this project: No responsiveness for mobile/other devices. No Javascript validation for the form. Did not test on all major browsers, only Firefox. Limited custom styling for checkboxes and omitted radio & select controls due to time constraint. 
 
 ## New concepts used
 - svg
